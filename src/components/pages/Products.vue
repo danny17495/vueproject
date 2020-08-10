@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-right">
-      <button class="btn btn-primary mt-4" @click="openModal(true)">建立新的產品</button>
+      <button class="btn btn-success mt-4" @click="openModal(true)">建立新的產品</button>
     </div>
     <table class="table mt-4">
       <thead>
@@ -30,7 +30,7 @@
           </td>
           <td>
             <button class="btn btn-outline-primary btn-sm" @click="openModal(false, item)">編輯</button>
-            <button class="btn btn-outline-primary btn-sm" @click="delProductModal(item)">刪除</button>
+            <button class="btn btn-outline-danger btn-sm" @click="delProductModal(item)">刪除</button>
           </td>
         </tr>
       </tbody>
@@ -193,9 +193,7 @@
           api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
           httpMethod = 'put';
         }
-        this.$http[httpMethod](api, {
-          data: vm.tempProduct
-        }).then((response) => {
+        this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
           console.log(response.data);
           if (response.data.success) {
             $('#productModal').modal('hide');
