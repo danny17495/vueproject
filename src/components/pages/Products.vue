@@ -253,7 +253,8 @@
                 // 此方法沒有辦法雙向綁定 所以使用Set的方法強制寫入 確保雙向綁定
                 //   vm.tempProduct.imageUrl = response.data.imageUrl;
                   vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl);
-
+              } else {
+                this.$bus.$emit('message:push', response.data.message, 'danger');
               }
           });
       },
