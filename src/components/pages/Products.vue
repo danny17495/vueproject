@@ -36,6 +36,8 @@
         </tr>
       </tbody>
     </table>
+    <!-- pagination 此處綁定的pages 需要與props一致才可以接收-->
+    <Pagination :pages='pagination' @changepage="getProducts"></Pagination>
     <!-- productModal -->
     <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
@@ -157,28 +159,34 @@
 <script>
   //需要引入ＪＱＵＥＲＹ
   import $ from 'jquery';
+  import Pagination from '../pagination';
 
   export default {
+    components: {
+      Pagination,
+    },
     data() {
       return {
         products: [],
+        pagination: {},
         tempProduct: {},
         isNew: false,
         isLoading: false,
         status: {
-            fileUploading: false,
+          fileUploading: false,
         }
       };
     },
     methods: {
-      getProducts() {
-        const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`;
+      getProducts(page = 1) {
+        const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products?page=${page}`;
         const vm = this;
         vm.isLoading = true;
         this.$http.get(api).then((response) => {
           console.log(response.data);
           vm.isLoading = false;
           vm.products = response.data.products;
+          vm.pagination = response.data.pagination;
         });
       },
       openModal(isNew, item) {
@@ -200,7 +208,9 @@
           api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
           httpMethod = 'put';
         }
-        this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
+        this.$http[httpMethod](api, {
+          data: vm.tempProduct
+        }).then((response) => {
           console.log(response.data);
           if (response.data.success) {
             $('#productModal').modal('hide');
@@ -235,28 +245,28 @@
         });
       },
       uploadFile() {
-          console.log(this);
-          const uploadedFile = this.$refs.files.files[0];
-          const vm = this;
-          const formData = new FormData();
-          formData.append('file-to-upload', uploadedFile);
-          const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/upload`;
-          vm.status.fileUploading = true;
-          this.$http.post(url, formData, {
-              headers: {
-                  'Content-Type': 'multipart/form-data',
-              },
-          }).then((response) => {
-              console.log(response.data);
-              vm.status.fileUploading = false;
-              if (response.data.success) {
-                // 此方法沒有辦法雙向綁定 所以使用Set的方法強制寫入 確保雙向綁定
-                //   vm.tempProduct.imageUrl = response.data.imageUrl;
-                  vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl);
-              } else {
-                this.$bus.$emit('message:push', response.data.message, 'danger');
-              }
-          });
+        console.log(this);
+        const uploadedFile = this.$refs.files.files[0];
+        const vm = this;
+        const formData = new FormData();
+        formData.append('file-to-upload', uploadedFile);
+        const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/admin/upload`;
+        vm.status.fileUploading = true;
+        this.$http.post(url, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }).then((response) => {
+          console.log(response.data);
+          vm.status.fileUploading = false;
+          if (response.data.success) {
+            // 此方法沒有辦法雙向綁定 所以使用Set的方法強制寫入 確保雙向綁定
+            //   vm.tempProduct.imageUrl = response.data.imageUrl;
+            vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl);
+          } else {
+            this.$bus.$emit('message:push', response.data.message, 'danger');
+          }
+        });
       },
     },
     created() {
