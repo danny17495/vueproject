@@ -16,9 +16,9 @@ export default {
   name: 'Navbar',
   data() {
     return {
-      messages: [{
-
-      }],
+      messages: [
+          
+      ],
     };
   },
   methods: {
