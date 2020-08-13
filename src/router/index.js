@@ -1,9 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 // import HelloWorld from '@/components/HelloWorld';
+//1.先import 名稱 from 路徑（pages 下需要有同名字的vue檔案）
 import Dashboard from '@/components/Dashboard';
 import Login from '@/components/pages/Login';
 import Products from '@/components/pages/Products';
+import Orders from '@/components/pages/Orders';
+import Coupons from '@/components/pages/Coupons';
+
+
 
 
 
@@ -34,12 +39,26 @@ export default new Router({
       name: 'Dashboard',
       component: Dashboard,
       children: [
-        {
+        {//2.設定子路徑 path小寫 name可以大寫開頭
          path: 'products',
          name: 'Products',
-         component: Products, 
+         //記得選擇components
+         component: Products,
+         //是否需要登入操作 
          meta: {requiresAuth: true},
-        }
+        },
+        {
+          path: 'orders',
+          name: 'Orders',
+          component: Orders, 
+          meta: {requiresAuth: true},
+         },
+         {
+          path: 'coupons',
+          name: 'Coupons',
+          component: Coupons, 
+          meta: {requiresAuth: true},
+         }
       ]
     },
   ]
