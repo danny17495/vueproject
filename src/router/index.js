@@ -7,6 +7,8 @@ import Login from '@/components/pages/Login';
 import Products from '@/components/pages/Products';
 import Orders from '@/components/pages/Orders';
 import Coupons from '@/components/pages/Coupons';
+import CustomerOrders from '@/components/pages/CustomerOrders';
+
 
 
 
@@ -59,7 +61,20 @@ export default new Router({
           component: Coupons, 
           meta: {requiresAuth: true},
          }
-      ]
+      ],
     },
-  ]
-})
+    {
+      path: '/',
+      name: 'Dashboard',
+      component: Dashboard,
+      children: [
+        {//2.設定子路徑 path小寫 name可以大寫開頭
+         path: 'customerorders',
+         name: 'CustomerOrders',
+         //記得選擇components
+         component: CustomerOrders,
+        },
+      ],
+    },
+  ],
+});
