@@ -8,6 +8,8 @@ import Products from '@/components/pages/Products';
 import Orders from '@/components/pages/Orders';
 import Coupons from '@/components/pages/Coupons';
 import CustomerOrders from '@/components/pages/CustomerOrders';
+import CustomerCheckout from '@/components/pages/CustomerCheckout';
+
 
 
 
@@ -73,6 +75,11 @@ export default new Router({
          name: 'CustomerOrders',
          //記得選擇components
          component: CustomerOrders,
+        },
+        {
+         path: 'customer_checkout/:orderId',
+         name: 'CustomerCheckout',
+         component: CustomerCheckout,
         },
       ],
     },
