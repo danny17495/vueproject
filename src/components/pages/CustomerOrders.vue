@@ -24,8 +24,7 @@
               <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
               查看更多
             </button>
-            <button type="button" class="btn btn-outline-danger btn-sm ml-auto"
-            @click="addtoCart(item.id)">
+            <button type="button" class="btn btn-outline-danger btn-sm ml-auto" @click="addtoCart(item.id)">
               <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
               加到購物車
             </button>
@@ -34,8 +33,8 @@
       </div>
     </div>
     <!-- modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" 
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -65,8 +64,7 @@
             <div class="text-muted text-nowrap mr-3">
               小計 <strong>{{ product.num * product.price }}</strong> 元
             </div>
-            <button type="button" class="btn btn-primary"
-                @click="addtoCart(product.id, product.num)">
+            <button type="button" class="btn btn-primary" @click="addtoCart(product.id, product.num)">
               <i class="fas fa-spinner fa-spin" v-if="product.id === status.loadingItem"></i>
               加到購物車
             </button>
@@ -75,9 +73,9 @@
       </div>
     </div>
     <!-- 購物車列表 -->
-    <div class="my-5 row justify-content-center" >
+    <div class="my-5 row justify-content-center">
       <div class="my-5 row justify-content-center">
-            <h2>購物車列表</h2>
+        <h2>購物車列表</h2>
         <table class="table">
           <thead>
             <th></th>
@@ -86,10 +84,9 @@
             <th>單價</th>
           </thead>
           <tbody v-if="cart.carts">
-            <tr v-for="item in cart.carts" :key="item.id" >
+            <tr v-for="item in cart.carts" :key="item.id">
               <td class="align-middle">
-                <button type="button" class="btn btn-outline-danger btn-sm"
-                @click="removeCartItem(item.id)">
+                <button type="button" class="btn btn-outline-danger btn-sm" @click="removeCartItem(item.id)">
                   <i class="far fa-trash-alt"></i>
                 </button>
               </td>
@@ -124,6 +121,55 @@
         </div>
       </div>
     </div>
+    <!-- 表單 -->
+    <div class="my-5 row justify-content-center">
+      <form class="col-md-6" @submit.prevent="createOrder">
+        <h2>我是訂單</h2>
+        <div class="form-group">
+          <label for="useremail">Email</label>
+          <input type="email" class="form-control" name="email" id="useremail"
+            :class="{'is-invalid': errors.has('email')}"
+            v-validate="'required|email'"
+            v-model="form.user.email"
+            placeholder="請輸入 Email">
+          <span class="text-danger" v-if="errors.has('email')">
+            {{ errors.first('email') }}
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="username">收件人姓名</label>
+          <input type="text" class="form-control" name="name" id="username" 
+          :class="{'is-invalid': errors.has('name')}"
+          v-model="form.user.name" v-validate="'required'" placeholder="輸入姓名">
+          <span class="text-danger" v-if="errors.has('name')">姓名必須輸入</span>
+        </div>
+
+        <div class="form-group">
+          <label for="usertel">收件人電話</label>
+          <input type="tel" class="form-control" name="tel" id="usertel"
+          :class="{'is-invalid': errors.has('tel')}"
+          v-model="form.user.tel" v-validate="'required'" placeholder="請輸入電話">
+          <span class="text-danger" v-if="errors.has('tel')">電話必須輸入</span>
+        </div>
+
+        <div class="form-group">
+          <label for="useraddress">收件人地址</label>
+          <input type="text" class="form-control" name="address" id="useraddress" 
+            :class="{'is-invalid': errors.has('address')}"
+            v-model="form.user.address" v-validate="'required'" placeholder="請輸入地址">
+          <span class="text-danger" v-if="errors.has('address')">地址欄位不得留空</span>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">留言</label>
+          <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
+        </div>
+        <div class="text-right">
+          <button class="btn btn-danger">送出訂單</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -136,11 +182,20 @@
         products: [],
         product: {},
         status: {
-            loadingItem: '',
+          loadingItem: '',
+        },
+        form: {
+          user: {
+            name: '',
+            email: '',
+            tel: '',
+            address: '',
+          },
+          message: '',
         },
         cart: {},
         isLoading: false,
-        coupon_code:'',
+        coupon_code: '',
       };
     },
     methods: {
@@ -165,15 +220,17 @@
           vm.status.loadingItem = '';
         });
       },
-      addtoCart(id, qty = 1){
+      addtoCart(id, qty = 1) {
         const vm = this;
         const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart`;
         vm.status.loadingItem = id;
         const cart = {
-            product_id: id,
-            qty,
+          product_id: id,
+          qty,
         };
-        this.$http.post(url, { data: cart }).then((response) => {
+        this.$http.post(url, {
+          data: cart
+        }).then((response) => {
           console.log(response);
           vm.status.loadingItem = '';
           vm.getCart();
@@ -207,12 +264,32 @@
           code: vm.coupon_code,
         }
         vm.isLoading = true;
-        this.$http.post(url, { data: coupon }).then((response) => {
-          console.log(response); 
+        this.$http.post(url, {
+          data: coupon
+        }).then((response) => {
+          console.log(response);
           vm.getCart();
           vm.isLoading = false;
         });
-      }
+      },
+      createOrder() {
+        const vm = this;
+        const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/order`;
+        const order = vm.form;
+        // vm.isLoading = true;
+        this.$validator.validate().then((result) => {
+            if (result) {
+             this.$http.post(url, { data: order }).then((response) => {
+            console.log('訂單已建立', response);
+            //vm.getCart();
+            vm.isLoading = false;
+            });
+          } else {
+            console.log('欄位不完整');
+            alert('欄位不完整 請檢查');
+          }
+        });
+      },
     },
     created() {
       this.getProducts();

@@ -12,10 +12,17 @@ import router from './router';
 import './bus';
 import currencyFilter from './filters/currency';
 import dateFilter from './filters/date';
+import VeeValidate from 'vee-validate';
+//引用中文驗證
+import zhTWValidate from 'vee-validate/dist/locale/zh_TW'
 
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
+
+//驗證與中文化引用 ＊注意順序 
+Vue.use(VeeValidate);
+VeeValidate.Validator.localize('zh_TW', zhTWValidate);
 
 Vue.component('Loading', Loading);
 Vue.filter('currency', currencyFilter);
