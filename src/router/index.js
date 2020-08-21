@@ -11,14 +11,15 @@ import Coupons from '@/components/pages/admin/Coupons';
 import CustomerOrders from '@/components/pages/admin/CustomerOrders';
 import CustomerCheckout from '@/components/pages/admin/CustomerCheckout';
 // front
+import Home from '@/components/views/Home';
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    //若進入未編寫之頁面，強制進入登入頁面
+   
     {
-      path: '*',
+      path: '*',  //若進入未編寫之頁面，強制進入登入頁面
       redirect: 'login',
     },
     //登入頁面
@@ -26,6 +27,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/',
+      name: 'MainPage',
+      component: Home,
     },
     {
       path: '/admin',
