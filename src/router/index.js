@@ -2,19 +2,15 @@ import Vue from 'vue';
 import Router from 'vue-router';
 // import HelloWorld from '@/components/HelloWorld';
 //1.先import 名稱 from 路徑（pages 下需要有同名字的vue檔案）
-import Dashboard from '@/components/Dashboard';
-import Login from '@/components/pages/Login';
-import Products from '@/components/pages/Products';
-import Orders from '@/components/pages/Orders';
-import Coupons from '@/components/pages/Coupons';
-import CustomerOrders from '@/components/pages/CustomerOrders';
-import CustomerCheckout from '@/components/pages/CustomerCheckout';
-
-
-
-
-
-
+// admin
+import Dashboard from '@/components/views/admin/Dashboard';
+import Login from '@/components/pages/admin/Login';
+import Products from '@/components/pages/admin/Products';
+import Orders from '@/components/pages/admin/Orders';
+import Coupons from '@/components/pages/admin/Coupons';
+import CustomerOrders from '@/components/pages/admin/CustomerOrders';
+import CustomerCheckout from '@/components/pages/admin/CustomerCheckout';
+// front
 
 Vue.use(Router)
 
@@ -25,13 +21,6 @@ export default new Router({
       path: '*',
       redirect: 'login',
     },
-    // //首頁
-    // {
-    //   path: '/',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld,
-    //   meta: {requiresAuth: true},
-    // },
     //登入頁面
     {
       path: '/login',

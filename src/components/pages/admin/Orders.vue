@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Pagination from '../pagination';
+import Pagination from '../../views/admin/pagination';
 export default {
   data() {
     return {

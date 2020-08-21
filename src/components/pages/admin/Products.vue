@@ -159,7 +159,7 @@
 <script>
   //需要引入ＪＱＵＥＲＹ
   import $ from 'jquery';
-  import Pagination from '../pagination';
+  import Pagination from '../../views/admin/pagination';
 
   export default {
     components: {
