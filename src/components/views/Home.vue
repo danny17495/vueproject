@@ -11,6 +11,8 @@
     </main>
     <!-- subscription -->
     <Subscription></Subscription>
+    <!-- footer -->
+    <Footer></Footer>
 </div>
 </template>
 
@@ -21,6 +23,8 @@ import Alert from '../views/admin/AlertMessage';
 import Carousel from './front/Carousel';
 import ContentPage from '@/components/pages/front/ContentPage';
 import Subscription from '@/components/pages/front/Subscription';
+import Footer from './front/Footer';
+
 
 
 
@@ -31,6 +35,7 @@ export default {
         Carousel,
         ContentPage,
         Subscription,
+        Footer,
     },
 };
 </script>

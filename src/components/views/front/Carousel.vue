@@ -2,17 +2,19 @@
 <div>
   <Carousel :autoplay="true" :perPage="1" :loop="true" :autoplayTimeout="3000" :paginationActiveColor="'#F9CC01'">
     <Slide>
-      <img src="https://upload.cc/i1/2020/08/21/ClhqUT.jpg" class="w-100" alt="...">
+      <img src="https://upload.cc/i1/2020/08/25/ye9lo1.jpg" class="w-100" alt="...">
     </Slide>
     <Slide>
-      <img src="https://upload.cc/i1/2020/08/21/oqiPlv.jpg" class="w-100"  alt="...">
+      <img src="https://upload.cc/i1/2020/08/25/rViX7S.jpg" class="w-100"  alt="...">
     </Slide>
     <Slide>
-      <img src="https://upload.cc/i1/2020/08/21/CGXWVy.jpg" class="w-100" alt="...">
+      <img src="https://upload.cc/i1/2020/08/25/7nzMfA.jpg" class="w-100" alt="...">
     </Slide>
   </Carousel>
 </div>
 </template>
+
+
 
 
 <script>
