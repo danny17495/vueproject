@@ -1,0 +1,57 @@
+  
+.navbar {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #604C3F;
+}
+
+.nav-link i {
+    position: relative;
+    font-size: 22px;
+}
+
+@media (max-width: 575.98px) {
+    .logo {
+        display: none;
+    }
+    .logoMobile {
+        display: block;
+    }
+}
+
+@media (min-width: 576px) {
+    .logoMobile {
+        display: none;
+    }
+}
+
+
+.favoritemodal {
+    font-size: 18px;
+}
+
+.dropdownIcon {
+    color: #604C3F;
+}
+
+.dropdownIcon i {
+    position: relative;
+    font-size: 22px;
+}
+
+.dropdownIcon i span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -12px;
+    right: -13px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    color: #fefefe;
+    background-color: #EA562A;
+}

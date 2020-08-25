@@ -2,21 +2,35 @@
 <div>
     <!-- Navbar -->
     <Navbar></Navbar>
+    <!-- Alert -->
+    <Alert></Alert>
     <!-- Carousel -->
     <Carousel></Carousel>
+    <main>
+        <ContentPage></ContentPage>
+    </main>
+    <!-- subscription -->
+    <Subscription></Subscription>
 </div>
 </template>
 
 <script>
 //將要置入的元件import 
 import Navbar from './front/Navbar';
-import Carousel from './Carousel';
+import Alert from '../views/admin/AlertMessage';
+import Carousel from './front/Carousel';
+import ContentPage from '@/components/pages/front/ContentPage';
+import Subscription from '@/components/pages/front/Subscription';
+
 
 
 export default {
     components: {
         Navbar,
+        Alert,
         Carousel,
+        ContentPage,
+        Subscription,
     },
 };
 </script>

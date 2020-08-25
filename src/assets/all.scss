@@ -1,6 +1,10 @@
-@import "~bootstrap/scss/functions";
-@import "./helpers/_variables";
+@import "~bootstrap/scss/functions";// 載入bootstrap 套用變數
+@import "./sass/helpers/_variables";// 載入自定義變數
 @import "~bootstrap/scss/bootstrap";
-@import "./_dashboard";
 
+@import "./sass/common/dashboard";
+@import "./sass/common/navbar";
+
+@import "./sass/components/_contentpage";
+@import "./sass/components/subscription"; 
 

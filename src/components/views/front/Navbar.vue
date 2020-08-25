@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light font-weight-bold" style="background-color: #000000">
+    <nav class="navbar navbar-expand-lg navbar-light font-weight-bold" style="background-color: #000">
             <router-link to="/">
                 <img class="logo" src="@/assets/images/logo.png" width="150" height="80" alt="">
                 <!-- <img class="logoMobile" src="@/assets/images/logo.png" width="" height="" alt=""> -->

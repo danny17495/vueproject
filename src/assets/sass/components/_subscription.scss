@@ -1,0 +1,38 @@
+  
+.bg-sub {
+    background-color: #cdc0b2;
+}
+
+.form-square {
+    background-color: #FAF4F4;
+}
+
+.subtext {
+    color: #463F32;
+    font-weight: bold;
+}
+
+.form-square.form-square-withicon {
+    padding-left: 60px;
+    position: relative;
+}
+
+.form-square .form-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.form-square .form-square-icon-left {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 20px;
+    color: #0c0909;
+}
+
+.btn-accent {
+    color: #FFFFFF;
+    background-color: #0c0909;
+    border-color: #0c0909;
+}
