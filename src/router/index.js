@@ -12,6 +12,8 @@ import CustomerOrders from '@/components/pages/admin/CustomerOrders';
 import CustomerCheckout from '@/components/pages/admin/CustomerCheckout';
 // front
 import Home from '@/components/views/Home';
+import Shopping from '@/components/views/Shopping';
+import ProductList from '@/components/pages/front/ProductList';
 
 Vue.use(Router)
 
@@ -28,10 +30,23 @@ export default new Router({
       name: 'Login',
       component: Login,
     },
+    //首頁
     {
       path: '/',
       name: 'MainPage',
       component: Home,
+    },
+    {
+      name: 'Shopping',
+      path: '/shopping',
+      component: Shopping,
+      children: [
+        {
+          path: 'productlist',
+          name: 'ProductList',
+          component: ProductList,         
+        }
+      ]
     },
     {
       path: '/admin',
