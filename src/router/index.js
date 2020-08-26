@@ -14,6 +14,7 @@ import CustomerCheckout from '@/components/pages/admin/CustomerCheckout';
 import Home from '@/components/views/Home';
 import Shopping from '@/components/views/Shopping';
 import ProductList from '@/components/pages/front/ProductList';
+import ProductDetail from '@/components/pages/front/ProductDetail';
 
 Vue.use(Router)
 
@@ -45,7 +46,12 @@ export default new Router({
           path: 'productlist',
           name: 'ProductList',
           component: ProductList,         
-        }
+        },
+        {
+          path: 'productdetail/:product_id',
+          name: 'ProductDetail',
+          component: ProductDetail,         
+        },
       ]
     },
     {
