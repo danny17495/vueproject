@@ -14,7 +14,7 @@
     <!-- 圖片介紹區 -->
     <section class="menu" >
         <h2 class="text-sbbrown font-weight-bold text-center py-2 mb-0">
-        <i class="fas fa-search"></i>
+            <i class="fab fa-envira"></i>
             找尋自己的香味
         </h2>
         <div class="row no-gutters justify-content-center my-4">

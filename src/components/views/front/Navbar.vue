@@ -1,35 +1,35 @@
+  
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light font-weight-bold" style="background-color: #000">
-            <router-link to="/">
-                <img class="logo" src="@/assets/images/logo.png" width="150" height="80" alt="">
-                <!-- <img class="logoMobile" src="@/assets/images/logo.png" width="" height="" alt=""> -->
-            </router-link>
+    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold" style="background-color: #000;">
         <div class="container">
+            <router-link to="/">
+                <img class="logo" src="@/assets/images/logo.png" width="120" height="60" alt="">
+                <img class="logoMobile" src="@/assets/images/logo.png" width="" height="" alt="">
+            </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                <ul class="navbar-nav ml-3 ml-auto h5 ">
-                    <li class="nav-item ml-3 h5 ">
-                        <router-link class="nav-link btn" to="/shopping/productlist">
-                        <i class="fas fa-store-alt" style="color:white"></i>
-                        <span style="color: #FFFFFF;display: inline-block;">讀味去</span>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-3 ml-auto">
+                    <li class="nav-item ml-3 font-weight-normal">
+                        <router-link class="nav-link" to="/shopping/productlist"><i class="fas fa-store"></i> 
+                        <span>讀味去</span>    
                         </router-link>
                     </li>
                 </ul>
-                <!-- 我的最愛 -->
-                <div class="dropdown h4 ml-3" @click.prevent="getFavorites">
+                <!-- 願望清單 -->
+                <div class="dropdown h4 ml-3 " @click.prevent="getFavorites">
                     <button class="btn dropdownIcon ml-0 pl-0" id="favorDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-heart" style="color:white">
+                        <i class="fas fa-heart">
                             <span v-if="favorLength > 0">{{ favorLength  }}</span>
                         </i>
-                        <span style="color: #FFFFFF;display: inline-block;">最愛的</span>
+                        <span>我的最愛</span>
                     </button>
                 <!-- 下拉頁面 -->
                 <div class="dropdown-menu px-3" aria-labelledby="favorDropdown" style="min-width: 300px">
-                    <h6>最愛清單</h6>
+                    <h6>願望清單</h6>
                     <table class="table table-sm table-hover">
                         <tbody>
                             <!-- <h5 class="itemTitle" v-if='cartLength === 0' colspan="3">還沒放進喜歡的商品嗎？</h5>
@@ -54,9 +54,10 @@
                 <!-- 購物車 -->
                 <div class="dropdown h4 ml-3" @click.prevent="getCart">
                     <button class="btn dropdownIcon ml-0 pl-0" id="cartDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-shopping-cart" style="color:white" :class="{'empty': cartLength === 0}"></i>
-                        <span style="color: #FFFFFF; display: inline-block;">購物車</span>
-                        <span class="font-weight-bold" style="color: green" v-if="cartLength > 0">{{ cartLength }}</span>
+                        <i class="fas fa-shopping-cart" :class="{'empty': cartLength === 0}">
+                            <span v-if="cartLength > 0">{{ cartLength }}</span>
+                        </i>
+                        <span>購物車</span>
                     </button>
                 <!-- 下拉頁面 -->
                 <div class="dropdown-menu px-3" aria-labelledby="cartDropdown" style="min-width: 300px">
