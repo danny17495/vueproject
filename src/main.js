@@ -13,6 +13,10 @@ import './bus';
 import currencyFilter from './filters/currency';
 import dateFilter from './filters/date';
 import VeeValidate from 'vee-validate';
+import {
+  ValidationObserver,
+  ValidationProvider,
+} from 'vee-validate';
 //引用中文驗證
 import zhTWValidate from 'vee-validate/dist/locale/zh_TW';
 //引用carousel
@@ -21,6 +25,9 @@ import VueCarousel from 'vue-carousel';
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 
 //驗證與中文化引用 ＊注意順序 
 Vue.use(VeeValidate);
@@ -33,6 +40,7 @@ Vue.filter('currency', currencyFilter);
 Vue.filter('date', dateFilter);
 
 axios.defaults.withCredentials = true;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,0 +1,23 @@
+
+.carList {
+    width: 100%;
+    min-height: 700px;
+    background-color: #fff;
+}
+
+
+.editColumn .countNumber .productNumber {
+    width: 50px;
+    padding: 3px 6px;
+}
+
+.form-control {
+    border: 1px solid #604C3F;
+}
+
+
+@media (max-width: 540px) {
+    .productImg img {
+        display: none;
+    }
+}

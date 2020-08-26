@@ -1,103 +1,106 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-// import HelloWorld from '@/components/HelloWorld';
-//1.先import 名稱 from 路徑（pages 下需要有同名字的vue檔案）
-// admin
-import Dashboard from '@/components/views/admin/Dashboard';
-import Login from '@/components/pages/admin/Login';
-import Products from '@/components/pages/admin/Products';
-import Orders from '@/components/pages/admin/Orders';
-import Coupons from '@/components/pages/admin/Coupons';
-import CustomerOrders from '@/components/pages/admin/CustomerOrders';
-import CustomerCheckout from '@/components/pages/admin/CustomerCheckout';
-// front
-import Home from '@/components/views/Home';
-import Shopping from '@/components/views/Shopping';
-import ProductList from '@/components/pages/front/ProductList';
-import ProductDetail from '@/components/pages/front/ProductDetail';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
+  const routes = [
+          // 預設主頁
+          {
+            path: '*',  // 若進入的頁面非設定的頁面，會被重新導向
+            redirect: '/',  
+          },
 
-export default new Router({
-  routes: [
-   
-    {
-      path: '*',  //若進入未編寫之頁面，強制進入登入頁面
-      redirect: 'login',
+          {
+            name: 'MainPage',
+            path: '/',
+            component: () => import('@/components/views/Home'),
+          },
+
+          {
+            name: 'Shopping',
+            path: '/shopping',
+            component: () => import('@/components/views/Shopping'),
+              children: [
+                  {   // /shopping/shopping_prod
+                    name: 'ProductList',
+                    path: 'productlist',
+                    component: () => import('@/components/pages/front/ProductList'),  
+                  },
+                  {   // /shopping/ProductDetail/:product_id
+                    name: 'ProductDetail',
+                    path: 'productdetail/:product_id',
+                    component: () => import('@/components/pages/front/ProductDetail'),  
+                  },
+                  {  // /shopping/cartlist
+                    name: 'CartList',
+                    path: 'cartlist',
+                    component: () => import('@/components/pages/front/CartList'),  
+                  },
+                  {  // /shopping/OrderPayment
+                    name: 'OrderPayment',
+                    path: 'OrderPayment',
+                    component: () => import('@/components/pages/front/OrderPayment'),  
+                  },
+                  {  // /shopping/OrderInfo
+                    name: 'OrderInfo',
+                    path: 'OrderInfo/:order_id',
+                    component: () => import('@/components/pages/front/OrderInfo'),  
+                  },
+              ],
+          },
+
+          {
+            name: 'Login',
+            path: '/login',
+            component: () => import('@/components/pages/admin/Login'),
+          },
+          {
+            name: 'Dashboard',
+            path: '/',
+            component: () => import('@/components/views/admin/Dashboard'),
+            children:[
+            {
+                name: 'CustomerOrders',
+                path: 'customerorders',
+                component: () => import('@/components/pages/admin/customerOrders'),
+                // meta: { requiresAuth: true },  // 放至此處為確保進入此頁面時，需要被驗證
+            },
+                ],
+          },
+          {
+            name: 'Dashboard',
+            path: '/admin',
+            component: () => import('@/components/views/admin/Dashboard'),
+              children: [
+                {
+                  name: 'Products',
+                  path: 'products',
+                  component: () => import('@/components/pages/admin/Products'),
+                  meta: { requiresAuth: true },  // 放至此處為確保進入此頁面時，需要被驗證
+                },
+                {
+                  name: 'Orders',
+                  path: 'orders',
+                  component: () => import('@/components/pages/admin/Orders'),
+                  meta: { requiresAuth: true },  // 放至此處為確保進入此頁面時，需要被驗證
+                },
+                {
+                  name: 'Coupons',
+                  path: 'coupons',
+                  component: () => import('@/components/pages/admin/Coupons'),
+                  meta: { requiresAuth: true },  // 放至此處為確保進入此頁面時，需要被驗證
+                }, 
+              ],
+          },
+  ];
+
+  const router = new VueRouter({
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+          return savedPosition;
+      }
+      return { x: 0, y: 0 };
     },
-    //登入頁面
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login,
-    },
-    //首頁
-    {
-      path: '/',
-      name: 'MainPage',
-      component: Home,
-    },
-    {
-      name: 'Shopping',
-      path: '/shopping',
-      component: Shopping,
-      children: [
-        {
-          path: 'productlist',
-          name: 'ProductList',
-          component: ProductList,         
-        },
-        {
-          path: 'productdetail/:product_id',
-          name: 'ProductDetail',
-          component: ProductDetail,         
-        },
-      ]
-    },
-    {
-      path: '/admin',
-      name: 'Dashboard',
-      component: Dashboard,
-      children: [
-        {//2.設定子路徑 path小寫 name可以大寫開頭
-         path: 'products',
-         name: 'Products',
-         //記得選擇components
-         component: Products,
-         //是否需要登入操作 
-         meta: {requiresAuth: true},
-        },
-        {
-          path: 'orders',
-          name: 'Orders',
-          component: Orders, 
-          meta: {requiresAuth: true},
-         },
-         {
-          path: 'coupons',
-          name: 'Coupons',
-          component: Coupons, 
-          meta: {requiresAuth: true},
-         }
-      ],
-    },
-    {
-      path: '/',
-      name: 'Dashboard',
-      component: Dashboard,
-      children: [
-        {//2.設定子路徑 path小寫 name可以大寫開頭
-         path: 'customerorders',
-         name: 'CustomerOrders',
-         //記得選擇components
-         component: CustomerOrders,
-        },
-        {
-         path: 'customer_checkout/:orderId',
-         name: 'CustomerCheckout',
-         component: CustomerCheckout,
-        },
-      ],
-    },
-  ],
-});
+  });
+
+  export default router
