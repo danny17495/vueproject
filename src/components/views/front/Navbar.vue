@@ -26,14 +26,12 @@
                             <span v-if="favorLength > 0">{{ favorLength  }}</span>
                         </i>
                         <span>我的最愛</span>
-                    </button>
+                    </button>-*
                 <!-- 下拉頁面 -->
                 <div class="dropdown-menu px-3" aria-labelledby="favorDropdown" style="min-width: 300px">
                     <h6>願望清單</h6>
                     <table class="table table-sm table-hover">
                         <tbody>
-                            <!-- <h5 class="itemTitle" v-if='cartLength === 0' colspan="3">還沒放進喜歡的商品嗎？</h5>
-                            <h5 class="itemTitle" v-else>願望清單</h5> -->
                             <tr v-for="item in favorites" :key="item.id">
                                 <td width="50">
                                     <i class="fas fa-cart-plus text-sbbrown" type="button" @click.stop="addtoCart(item.id, item.num)"></i>
@@ -46,11 +44,12 @@
                         </tbody>
                     </table>
                     <hr>
-                        <router-link class="btn btn-sborange btn-block" to="/shopping/cartlist">
+                        <router-link class="btn btn-danger btn-block" to="/shopping/cartlist">
                             結帳去
                         </router-link>
                 </div>
                 </div>
+
                 <!-- 購物車 -->
                 <div class="dropdown h4 ml-3" @click.prevent="getCart">
                     <button class="btn dropdownIcon ml-0 pl-0" id="cartDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,8 +61,6 @@
                 <!-- 下拉頁面 -->
                 <div class="dropdown-menu px-3" aria-labelledby="cartDropdown" style="min-width: 300px">
                     <h6>已選擇商品</h6>
-                    <!-- <h5 class="itemTitle" v-if='cartLength === 0'>購物車是空的唷！</h5>
-                    <h5 class="itemTitle" v-else>購物車</h5> -->
                     <table class="table table-sm table-hover">
                         <thead>
                             <tr>
@@ -79,14 +76,14 @@
                                 <td>
                                     <i class="fas fa-trash-alt text-sbbrown" type="button" data-toggle="modal" @click.stop="removeCartItem(item.id)"></i>
                                 </td>
-                                <td class="text-sbbrown" @click="$router.push(`shopping/productdetail/${item.id}`)">{{ item.product.title }}</td>
+                                <td class="text-sbbrown" @click.prevent="$router.push(`/shopping/productdetail/${item.product_id}`)">{{ item.product.title }}</td>
                                 <td class="text-sbbrown text-right">{{ item.qty }}</td>
                                 <td class="text-sbbrown text-right">{{ item.total | currency }}</td>
                             </tr>
                         </tbody>
                     </table>
-                        <button class="btn btn-sbtan btn-block" @click="$router.push('/shopping/productlist')" v-if="!cartLength || cartLength === 0">購物去</button>
-                        <button class="btn btn-sborange btn-block" @click="$router.push('/shopping/cartlist')" v-else>結帳去</button>
+                        <button class="btn btn-danger btn-block" @click="$router.push('/shopping/productlist')" v-if="!cartLength || cartLength === 0">購物去</button>
+                        <button class="btn btn-danger btn-block" @click="$router.push('/shopping/cartlist')" v-else>結帳去</button>
                 </div>
                 </div>
             </div>
@@ -171,27 +168,8 @@ export default {
             this.$bus.$emit('productFavor:get');
             this.getFavorites();
         },
-        // getCart() {
-        //     const vm = this;
-        //     const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart`; 
-        //     vm.isLoading = true;
-        //     this.$http.get(url).then((response) => {
-        //         // vm.products = response.data.products;  // 取得資料後，將資料存放到products
-        //         // console.log(response);
-        //         vm.isLoading = false;
-        //     });
-        // },
     },
     computed: {
-        // 結帳階段避免navbar購物車被異動
-        // avoidClick() {
-        //     if (this.$route.path === 'shopping/checkorder' || this.$route.path === 'shopping/buyerinfo') {
-        //         $('#cartDropdown').dropdown('hide');
-        //         $('#favorDropdown').dropdown('hide');
-        //         return true;
-        //     }
-        // return false;
-        // },
     },  
     created() {
         const vm = this;
