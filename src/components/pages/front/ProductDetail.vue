@@ -282,6 +282,12 @@
         console.log('see', vm.products.filter);
       },
     },
+    watch: {
+      $route(to, from) {
+          this.productId = this.$route.params.product_id; // 存商品 id
+          this.getProduct();
+      }
+    },
     created() {
       this.productId = this.$route.params.product_id; // 存商品 id
       this.getProduct();
