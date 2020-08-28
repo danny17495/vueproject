@@ -36,7 +36,7 @@
                                 <td width="50">
                                     <i class="fas fa-cart-plus text-sbbrown" type="button" @click.stop="addtoCart(item.id, item.num)"></i>
                                 </td>
-                                <td class="text-sbbrown" @click="$router.push(`shopping/productdetail/${item.id}`)">{{ item.title }}</td>
+                                <td class="text-sbbrown" @click.prevent="$router.push(`shopping/productdetail/${item.id}`)">{{ item.title }}</td>
                                 <td width="50" class="itemDelete">
                                     <i class="fas fa-times text-sbbrown" type="button" @click.stop="removeFavorItem(item)"></i>
                                 </td>
@@ -128,7 +128,6 @@ export default {
             vm.$http.delete(url).then(() => {
                 vm.getCart();
                 vm.$bus.$emit("updateBag");
-                
             });
         },
         addtoCart(id , qty = 1) {  // ES6預設值qty=1
