@@ -1,11 +1,10 @@
   
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold" style="background-color: #000;">
+    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold" style="background-color: #000">
         <div class="container">
             <router-link to="/">
-                <img class="logo" src="@/assets/images/logo.png" width="120" height="60" alt="">
-                <img class="logoMobile" src="@/assets/images/logo.png" width="" height="" alt="">
+                <img class="logo" src="https://upload.cc/i1/2020/08/31/vDHiMw.png" width="201" height="74" alt="">
+                <img class="logoMobile" src="https://upload.cc/i1/2020/08/31/vDHiMw.png" width="105" height="39" alt="">
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +14,7 @@
                 <ul class="navbar-nav ml-3 ml-auto">
                     <li class="nav-item ml-3 font-weight-normal">
                         <router-link class="nav-link" to="/shopping/productlist"><i class="fas fa-store"></i> 
-                        <span>讀味去</span>    
+                        <span>寶可夢商店</span>    
                         </router-link>
                     </li>
                 </ul>
@@ -26,7 +25,7 @@
                             <span v-if="favorLength > 0">{{ favorLength  }}</span>
                         </i>
                         <span>我的最愛</span>
-                    </button>-*
+                    </button>
                 <!-- 下拉頁面 -->
                 <div class="dropdown-menu px-3" aria-labelledby="favorDropdown" style="min-width: 300px">
                     <h6>願望清單</h6>
@@ -36,7 +35,7 @@
                                 <td width="50">
                                     <i class="fas fa-cart-plus text-sbbrown" type="button" @click.stop="addtoCart(item.id, item.num)"></i>
                                 </td>
-                                <td class="text-sbbrown" @click.prevent="$router.push(`shopping/productdetail/${item.id}`)">{{ item.title }}</td>
+                                <td class="text-sbbrown" @click="toProduct(item.id)">{{ item.title }}</td>
                                 <td width="50" class="itemDelete">
                                     <i class="fas fa-times text-sbbrown" type="button" @click.stop="removeFavorItem(item)"></i>
                                 </td>
@@ -89,7 +88,6 @@
             </div>
         </div>
     </nav>
-  </div>
 </template>
 
 
@@ -167,9 +165,16 @@ export default {
             this.$bus.$emit('productFavor:get');
             this.getFavorites();
         },
+        toProduct(id) {
+            this.$router.push(`/shopping/productdetail/${id}`)
+        }
     },
     computed: {
-    },  
+    },
+    beforeRouteUpdate (to, from, next) {
+        this.toProduct(to.params.product_id)
+        next();
+    },   
     created() {
         const vm = this;
         vm.getCart();

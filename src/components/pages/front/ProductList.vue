@@ -1,11 +1,11 @@
 <template>
     <div class="productlist">
         <loading :active.sync="isLoading"></loading>
-        <div class="jumbotron jumbotron-fluid jumbotron-bg d-flex align-items-center">
+        <div class="jumbotron jumbotron-fluid pokemon-bg d-flex align-items-center">
             <div class="container">
             <div class="bg-lighter p-3 text-center">
-                <div class="h4 text-sborange font-weight-bold">堅持給你最獨特的</div>
-                <div class="h4 text-sborange font-weight-bold">讓你找到屬於自己的味道</div>
+                <div class="h4 text-sborange font-weight-bold">還記得兒時那個夢想嗎？</div>
+                <div class="h4 text-sborange font-weight-bold">現在出發，成為寶可夢大師吧！</div>
             </div>
         </div>
         </div>
@@ -265,15 +265,13 @@ export default {
         color:#000000
     }
     .productlist {
-        // background-color: #efe7de;
-        background: url(https://upload.cc/i1/2020/08/25/OkDJZQ.jpg) center center no-repeat;
+        background: url(https://upload.cc/i1/2020/08/31/RhMxmi.png) center center no-repeat;
         background-size: cover;
     }
     /* shopping輪播頁 */
-    .jumbotron-bg {
-        background: url(https://upload.cc/i1/2020/08/25/b4TDkd.jpg) center center;
-        background-size: cover;
-        min-height: 400px;
+    .pokemon-bg {
+        background: url(https://upload.cc/i1/2020/08/31/pCX2qS.jpg) center center;
+        min-height: 800px;
     }
 
 

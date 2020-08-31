@@ -15,27 +15,27 @@
     <section class="menu" >
         <h2 class="text-sbbrown font-weight-bold text-center py-2 mb-0">
             <i class="fab fa-envira"></i>
-            找尋自己的香味
+            成為寶可夢大師吧！
         </h2>
         <div class="row no-gutters justify-content-center my-4">
             <div class="col-md-10">
                 <div class="row no-gutters">
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/EO9pZ1.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/i3tEJd.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">森林清香</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">衣服飾品</a>
                             </div>
                     </div>
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/uoTXDa.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/di3ou4.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">清淡芬芳</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">生活雜貨</a>
                             </div>
                     </div>
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/GCryDX.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/vKpnw1.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">激情迷香</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">玩具模型</a>
                             </div>
                     </div>
                     
@@ -45,22 +45,22 @@
         <div class="row no-gutters justify-content-center my-3">
             <div class="col-md-10 mb-0">
                 <div class="row no-gutters">
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/ahBpyo.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/5ILR9H.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">海洋迷香</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">遊戲</a>
                             </div>
                     </div>
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/lez2G4.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/gHT9IW.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">成熟男香</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">御三家</a>
                             </div>
                     </div>
-                    <div class="col-lg-4 hovereffect">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/25/OKYTXv.jpg);"></div>
+                    <div class="col-lg-4 hovereffect border border-dark">
+                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/QSFENj.jpg);"></div>
                             <div class="overlay">
-                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">其他香水</a>
+                            <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">其他</a>
                             </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
             <div class="container">
                 <h2 class="text-sbbrown text-center mb-4 font-weight-bold">
                     <i class="fas fa-map-marked-alt"></i>
-                    <span>讀味去</span>
+                    <span>寶可夢商店</span>
                 </h2>
                 <div class="row">
                     <div class="col-md">

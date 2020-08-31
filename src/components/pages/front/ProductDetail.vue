@@ -91,35 +91,35 @@
               <div class="productContent p-3 my-4">
                 <div class="row text-center mb-5">
                   <div class="col-sm-6 col-md-3">
-                    <p class="productText align-items-start">純樸自然</p>
-                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/26/ulHzty.jpeg" alt="">
+                    <p class="productText align-items-start">送禮自用皆宜</p>
+                    <img class="align-items-center img-thumbnail imgHeight" src="https://upload.cc/i1/2020/08/31/Y3KTBt.jpg" alt="">
                   </div>
                   <div class="col-sm-6 col-md-3">
-                    <p class="productText align-items-start">100%天然香精</p>
-                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/26/hvpyiD.jpg" alt="">
+                    <p class="productText align-items-start">獨一無二</p>
+                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/31/er0zl6.jpg" alt="">
                   </div>
                   <div class="col-sm-6 col-md-3">
                     <p class="productText align-items-start">優良品牌</p>
-                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/26/MlS8yb.png" alt="">
+                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/31/9Sivz4.jpg" alt="">
                   </div>
                   <div class="col-sm-6 col-md-3">
                     <p class="productText align-items-start">自由搭配</p>
-                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/26/zqNSEy.jpg" alt="">
+                    <img class="align-items-center img-thumbnail" src="https://upload.cc/i1/2020/08/31/XSal3H.jpg" alt="">
                   </div>
                 </div>
                 <div class="row mt-4 p-3">
                   <div class="col-md-3">
-                    <div class="h4 text-danger text-center font-weight-bold">釋放你的個人魅力</div>
+                    <div class="h4 text-danger text-center font-weight-bold">尋找自己的御三家</div>
                     <ul class="list-unstyled text-sbbrown py-3">
-                      <li><i class="far fa-smile-beam"></i> 特殊質地香味</li>
+                      <li><i class="far fa-smile-beam"></i> 寶可夢迷不可錯過的經典</li>
                       <hr>
-                      <li><i class="far fa-smile-beam"></i> 無添加任何人工香料</li>
+                      <li><i class="far fa-smile-beam"></i> 獨特仿真設計</li>
                       <hr>
                       <li><i class="far fa-smile-beam"></i> 立即下訂免運費</li>
                     </ul>
                   </div>
                   <div class="col-md-9">
-                    <img class="img-fluid" src="https://upload.cc/i1/2020/08/26/In62eU.jpg" alt="Responsive image">
+                    <img class="img-fluid" src="https://upload.cc/i1/2020/08/31/5LNsRE.jpg" alt="Responsive image">
                   </div>
                 </div>
               </div>
@@ -133,8 +133,8 @@
               </h5>
               <ul class="text-sbtan">
                 <li>24H直達配送</li>
-                <li>拆封後請放至陰暗處保存</li>
-                <li>有效日期：請見包裝標示(西元 /年/月/日)</li>
+                <li>12歲以下小朋友請由家長陪同使用</li>
+                <li>製造日期：請見包裝標示(西元 /年/月/日)</li>
                 <li>本商城販售之商品拆封後無7天鑑賞期服務</li>
               </ul>
             </div>
