@@ -21,19 +21,19 @@
             <div class="col-md-10">
                 <div class="row no-gutters">
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/i3tEJd.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-down"  style="background-image: url(https://upload.cc/i1/2020/08/31/i3tEJd.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">衣服飾品</a>
                             </div>
                     </div>
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/di3ou4.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-down" data-aos-delay="300" style="background-image: url(https://upload.cc/i1/2020/08/31/di3ou4.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">生活雜貨</a>
                             </div>
                     </div>
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/vKpnw1.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-down" data-aos-delay="600" style="background-image: url(https://upload.cc/i1/2020/08/31/vKpnw1.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">玩具模型</a>
                             </div>
@@ -46,19 +46,19 @@
             <div class="col-md-10 mb-0">
                 <div class="row no-gutters">
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/5ILR9H.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-up" data-aos-delay="900" style="background-image: url(https://upload.cc/i1/2020/08/31/5ILR9H.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">遊戲</a>
                             </div>
                     </div>
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/gHT9IW.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-up" data-aos-delay="1200" style="background-image: url(https://upload.cc/i1/2020/08/31/gHT9IW.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">御三家</a>
                             </div>
                     </div>
                     <div class="col-lg-4 hovereffect border border-dark">
-                        <div class="img-responsive rectangle-image bg-cover" style="background-image: url(https://upload.cc/i1/2020/08/31/QSFENj.jpg);"></div>
+                        <div class="img-responsive rectangle-image bg-cover" data-aos="fade-up" data-aos-delay="1500" style="background-image: url(https://upload.cc/i1/2020/08/31/QSFENj.jpg);"></div>
                             <div class="overlay">
                             <a href="#" class="info" @click.prevent="$router.push('/shopping/productlist')">其他</a>
                             </div>
@@ -88,3 +88,7 @@
         </section>
     </div>
 </template>
+
+<script>
+  AOS.init();
+</script>  

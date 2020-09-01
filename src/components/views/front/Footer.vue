@@ -36,9 +36,6 @@
                 <div class="text-white" style="font-size: 14px;">CopyRight © 2020 歡樂遊戲股份有限公司 All Rights Reserved.</div>
                 <div class="text-white" style="font-size: 10px;">本網站僅供個人學習交流使用，並無任何商業用途</div>
             </div>
-            <div class="col-md-1">
-                <router-link class="text-white" to="/login"><i class="fas fa-user"></i></router-link>
-            </div>
         </div>
     </div>
 </footer>
