@@ -72,7 +72,7 @@
         <div class="parallax col"></div>
     
         <!-- 尋找我們 -->
-        <section class="py-5 map" style="position: relative;">
+        <section class="py-5 map col" style="position: relative;">
             <div class="container">
                 <h2 class="text-sbbrown text-center mb-4 font-weight-bold">
                     <i class="fas fa-map-marked-alt"></i>

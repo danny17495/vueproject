@@ -31,7 +31,6 @@
     background-size: cover;
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
 
 .menu h2 {
@@ -126,6 +125,13 @@
 @media (max-width: 1140px) { 
     .parallax{
         display: none;
+    }
+    .map {
+        background: #000;
+
+    }
+    .news {
+        height: 150px;
     }
 }
 
