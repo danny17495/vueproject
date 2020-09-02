@@ -34,7 +34,7 @@
                         </span>
                     </div>
                 <div class="productimg" style="height: 230px; background-size: cover; background-position: center"
-                  :style="{backgroundImage: `url(${item.imageUrl})`}">
+                  :style="{backgroundImage: `url(${item.imageUrl})`}" @click="$router.push(`productdetail/${item.id}`)">
                 </div>
                 <!-- 我的最愛 -->
                 <a type="button" class="myfavorite">
