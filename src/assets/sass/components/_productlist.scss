@@ -5,10 +5,11 @@
 }
 //product bg
 .productlist {
-  background: url(https://upload.cc/i1/2020/08/31/RhMxmi.png) center center no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 500px;
+    background-color: #fff;
+//   background: url(https://upload.cc/i1/2020/08/31/RhMxmi.png) center center no-repeat;
+//   background-attachment: fixed;
+//   background-size: cover;
+//   min-height: 500px;
 }
 
 
@@ -89,6 +90,7 @@
 }
 
 .card-btn:hover {
+    color: #fff;
   background-color: #000000;
 }
 
