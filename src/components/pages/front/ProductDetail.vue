@@ -20,7 +20,7 @@
       <div class="container main">
         <div class="row">
           <div class="col-6 col-md-6">
-            <div class="productImg">
+            <div class="productImage">
               <img :src="product.imageUrl" alt="">
             </div>
           </div>

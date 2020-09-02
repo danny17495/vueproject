@@ -75,7 +75,7 @@ pre {
     width: 80%;
 }
 
-.productImg img {
+.productImage img {
 width: 100%;
 height: auto;
 }
@@ -104,7 +104,9 @@ height: auto;
     .buyButton {
         display: none;
     }
+    
 }
+
 
 @media (min-width: 768px) { 
     .buyButton2 {
