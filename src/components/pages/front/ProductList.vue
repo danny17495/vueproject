@@ -56,12 +56,12 @@
                   <div class="card-btn text-center cart-text" type="button"
                     @click="$router.push(`productdetail/${item.id}`)">
                     <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-search-dollar"></i>
                     查看詳情
                   </div>
                   <div class="card-btn text-center cart-text" type="button" @click.prevent="addtoCart(item.id)">
                     <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
-                    <i class="fas fa-search-dollar"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     加到購物車
                   </div>
                 </div>
