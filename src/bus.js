@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+//定義一個新的vue實例
 Vue.prototype.$bus = new Vue();
 
 //message

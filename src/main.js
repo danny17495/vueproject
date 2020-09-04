@@ -26,6 +26,7 @@ import VueCarousel from 'vue-carousel';
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
 
+//表單驗證
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 
@@ -36,9 +37,12 @@ VeeValidate.Validator.localize('zh_TW', zhTWValidate);
 Vue.use(VueCarousel);
 
 Vue.component('Loading', Loading);
+//千分位符號引用
 Vue.filter('currency', currencyFilter);
+//日期格式引用
 Vue.filter('date', dateFilter);
 
+//要使用session 必須另外設定 credential
 axios.defaults.withCredentials = true;
 
 /* eslint-disable no-new */
